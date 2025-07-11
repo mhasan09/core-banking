@@ -2,6 +2,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv, path
 from loguru import logger
+from datetime import timedelta, date
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -37,8 +38,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "core_apps.common",
     "core_apps.user_auth",
+    "core_apps.common",
     "core_apps.user_profile",
 ]
 
@@ -137,7 +138,22 @@ STATIC_ROOT = str(APPS_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = "user_auth.User"
 LOGGING_CONFIG = None
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+SPECTACULAR_SETTINGS = {
+    "TITLE": "NextGen Bank API",
+    "DESCRIPTION": "An API built for a banking system",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "LICENSE": {
+        "name": "MIT License",
+        "url": "https://opensource.org/license/mit",
+    },
+}
 
 LOGURU_LOGGING = {
     "handlers": [

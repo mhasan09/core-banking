@@ -2,7 +2,7 @@ build:
 	docker compose -f local.yml up --build -d --remove-orphans
 
 up:
-	docker compose -f local.yml up -d
+	docker compose -f local.yml up --build
 
 down:
 	docker compose -f local.yml down
@@ -32,4 +32,4 @@ network-inspect:
 	docker network inspect banker_local_nw
 
 banker-db:
-	docker compose -f local.yml exec postgres psql --username=alphaogilo --dbname=banker
+	docker compose -f local.yml exec postgres psql --username=postgres --dbname=banker
