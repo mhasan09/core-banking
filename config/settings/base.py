@@ -4,6 +4,7 @@ from pathlib import Path
 import cloudinary
 from dotenv import load_dotenv
 from loguru import logger
+from datetime import timedelta, date
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -134,13 +135,18 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = str(APPS_DIR / "staticfiles")
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "user_auth.User"
+DEFAULT_BIRTH_DATE = date(1900, 1, 1)
+DEFAULT_DATE = date(2000, 1, 1)
+DEFAULT_EXPIRY_DATE = date(2025, 1, 1)
+DEFAULT_COUNTRY = "BD"
+DEFAULT_PHONE_NUMBER = "+8801711111111"
 LOGGING_CONFIG = None
 
 REST_FRAMEWORK = {
