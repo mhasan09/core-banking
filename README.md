@@ -84,9 +84,9 @@ make migrate
 
 # Create superuser (admin)
 make superuser
+```
 
-
-🌐 Access the Application
+## 🌐 Access the Application
 
 API → http://localhost:8000
 
@@ -95,26 +95,26 @@ Admin → http://localhost:8000/admin
 API Docs → http://localhost:8000/api/v1/schema/swagger-ui/
 
 
-🛠 Development
+## 🛠 Development
 Package Management with UV
 
 This project uses UV for fast Python package management:
 
-# Install UV (if not installed)
+Install UV (if not installed)
 curl -sSf https://astral.sh/uv/install.sh | sh
 
-# Install dependencies
+Install dependencies
 uv pip install -r requirements/local.txt
 
-# Install in development mode
+Install in development mode
 uv pip install -e .
 
-# Update dependencies
+Update dependencies
 uv pip compile requirements/base.in -o requirements/base.txt
 uv pip compile requirements/local.in -o requirements/local.txt
 
 
-📂 Project Structure
+## 📂 Project Structure
 nextgen-bank/
 ├── config/               # Project configuration
 ├── core_apps/            # Main apps
@@ -127,27 +127,27 @@ nextgen-bank/
 └── requirements/         # Python dependencies
 
 
-⚙️ Environment Variables
-# Django
+## ⚙️ Environment Variables
+#### Django
 DEBUG=True
 SECRET_KEY=your-secret-key
 DJANGO_SETTINGS_MODULE=config.settings.local
 
-# Database
+#### Database
 POSTGRES_DB=banker
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 
-# Redis
+#### Redis
 REDIS_URL=redis://redis:6379/0
 
-# Celery
+#### Celery
 CELERY_BROKER_URL=redis://redis:6379/1
 CELERY_RESULT_BACKEND=redis://redis:6379/1
 
-# Email
+#### Email
 EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
@@ -155,7 +155,7 @@ EMAIL_HOST_USER=your-email@gmail.com
 EMAIL_HOST_PASSWORD=your-email-password
 DEFAULT_FROM_EMAIL=your-email@gmail.com
 
-# Cloudinary
+#### Cloudinary
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
