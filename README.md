@@ -116,19 +116,6 @@ uv pip compile requirements/local.in -o requirements/local.txt
 ```
 
 
-## 📂 Project Structure
-nextgen-bank/
-├── config/ # Project configuration
-├── core_apps/ # Main apps
-│ ├── accounts/ # Account management
-│ ├── cards/ # Card services
-│ ├── common/ # Common utilities
-│ ├── user_auth/ # Authentication
-│ └── user_profile/ # User profiles
-├── docker/ # Docker configuration
-└── requirements/ # Python dependencies
-
-
 ## ⚙️ Environment Variables
 ```bash
 # Django
